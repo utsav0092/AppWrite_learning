@@ -1,26 +1,71 @@
-# React starter kit with Appwrite
+# React Starter Kit with Appwrite
 
-Kickstart your React development with this ready-to-use starter project integrated with [Appwrite](https://www.appwrite.io)
+Kickstart your React development with this ready-to-use starter project integrated with [Appwrite](https://www.appwrite.io).
 
-## 🚀Getting started
+## 🚀 Features
 
-###
-Clone the Project
-Clone this repository to your local machine using Git:
+- React 19 + Vite for fast development
+- Appwrite backend integration (database)
+- Simple notes app example
 
-`git clone https://github.com/appwrite/starter-for-react`
+## 🛠️ Getting Started
 
-## 🛠️ Development guid
-1. **Configure Appwrite**<br/>
-   Navigate to `.env` and update the values to match your Appwrite project credentials.
-2. **Customize as needed**<br/>
-   Modify the starter kit to suit your app's requirements. Adjust UI, features, or backend
-   integrations as per your needs.
-3. **Install dependencies**<br/>
-   Run `npm install` to install all dependencies.
-4. **Run the app**<br/>
-   Start the project by running `npm run dev`.
+### 1. Clone the Project
 
-## 💡 Additional notes
-- This starter project is designed to streamline your React development with Appwrite.
-- Refer to the [Appwrite documentation](https://appwrite.io/docs) for detailed integration guidance.
+```sh
+git clone https://github.com/appwrite/starter-for-react
+cd starter-for-react
+```
+
+### 2. Configure Appwrite
+
+Update `.env` with your Appwrite project credentials:
+
+```
+VITE_APPWRITE_ENDPOINT=your-appwrite-endpoint
+VITE_APPWRITE_PROJECT_ID=your-project-id
+VITE_APPWRITE_DATABASE_ID=your-database-id
+VITE_APPWRITE_COLLECTION_ID_NOTES=your-notes-collection-id
+```
+
+### 3. Install Dependencies
+
+```sh
+npm install
+```
+
+### 4. Run the App
+
+```sh
+npm run dev
+```
+
+## 📁 Project Structure
+
+```
+starter-for-react/
+├── public/
+├── src/
+│   ├── App.jsx
+│   ├── main.jsx
+│   ├── assets/
+│   │   └── DeleteIcon.jsx
+│   ├── components/
+│   │   ├── Note.jsx
+│   │   └── NoteForm.jsx
+│   ├── lib/
+│   │   ├── appwrite.js
+│   │   └── databases.js
+│   └── pages/
+│       └── Notes.jsx
+├── .env
+├── package.json
+├── vite.config.js
+└── README.md
+```
+
+## 💡 Notes
+
+- The starter project demonstrates basic CRUD operations with Appwrite’s database.
+- UI is styled with Tailwind CSS and custom styles.
+- For more advanced usage, refer to [Appwrite documentation](https://appwrite.io/docs).

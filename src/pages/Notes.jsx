@@ -13,13 +13,6 @@ const Notes = () => {
     }, []);
 
     const init = async () => {
-        // const response = await databases.listDocuments(
-        //     import.meta.env.VITE_APPWRITE_DATABASE_ID,
-        //     import.meta.env.VITE_APPWRITE_COLLECTION_ID_NOTES
-        // );
-        // db.notes.list()
-        // db.notes.create()
-
         const response = await db.notes.list([
             Query.orderDesc('$createdAt')
         ]);
@@ -27,12 +20,40 @@ const Notes = () => {
     }
 
     return (
-        <div>
+        <div className="notes-container">
             <NoteForm setNotes={setNotes} />
-            <div>{notes.map(note => (
-                <Note key={note.$id} noteData={note} />
-                // <div key={note.$id}>{note.body}</div>
-            ))}</div>
+            <div className="notes-list">
+                {notes.map(note => (
+                    <Note key={note.$id} setNotes={setNotes} noteData={note} />
+                ))}
+            </div>
+
+            <style>{`
+                .notes-container {
+                  width: 100%;
+                  max-width: 720px;
+                  margin: 0 auto;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 20px;
+                  padding: 20px;
+                  box-sizing: border-box;
+                }
+                .notes-list {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 16px;
+                }
+                @media (max-width: 600px) {
+                  .notes-container {
+                    padding: 12px;
+                    gap: 16px;
+                  }
+                  .notes-list {
+                    gap: 12px;
+                  }
+                }
+            `}</style>
         </div>
     );
 }

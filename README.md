@@ -1,4 +1,4 @@
-# React Starter Kit with Appwrite
+# Learing React Starter Kit with Appwrite
 
 Kickstart your React development with this ready-to-use starter project integrated with [Appwrite](https://www.appwrite.io).
 
